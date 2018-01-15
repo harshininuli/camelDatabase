@@ -1,0 +1,21 @@
+Manifest-Version: 1.0
+Bnd-LastModified: 1515592249058
+Build-Jdk: 1.8.0_77
+Built-By: hnuli
+Bundle-ManifestVersion: 2
+Bundle-Name: Camel Database Implementation
+Bundle-SymbolicName: camelDatabaseImpl
+Bundle-Version: 1.0.0.SNAPSHOT
+Created-By: Apache Maven Bundle Plugin
+Export-Package: org.example.db.bean;uses:="org.apache.camel,org.example.
+ db.service";version="1.0.0.SNAPSHOT",org.example.route;uses:="org.apach
+ e.camel.builder,org.apache.camel,org.apache.camel.model";version="1.0.0
+ .SNAPSHOT"
+Import-Package: javax.sql,org.apache.camel;version="[2.15,3)",org.apache
+ .camel.builder;version="[2.15,3)",org.apache.camel.model;version="[2.15
+ ,3)",org.example.db.service;version="[1.0,2)",org.osgi.service.blueprin
+ t;version="[1.0.0,2.0.0)"
+Import-Service: javax.sql.DataSource;multiple:=false;filter="(osgi.jndi.
+ CamelDatabaseExample.datasource.name=camelDatabaseExampleDataSource)",o
+ rg.example.db.service.SampleDao;multiple:=false
+Tool: Bnd-1.50.0

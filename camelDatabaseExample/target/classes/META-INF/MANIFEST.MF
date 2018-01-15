@@ -1,0 +1,17 @@
+Manifest-Version: 1.0
+Bnd-LastModified: 1515592227441
+Build-Jdk: 1.8.0_77
+Built-By: hnuli
+Bundle-ManifestVersion: 2
+Bundle-Name: Camel Database Example
+Bundle-SymbolicName: camelDatabaseExample
+Bundle-Version: 1.0.0.SNAPSHOT
+Created-By: Apache Maven Bundle Plugin
+Export-Package: org.example.db.service;version="1.0.0.SNAPSHOT"
+Export-Service: javax.sql.DataSource;osgi.jndi.CamelDatabaseExample.data
+ source.name=camelDatabaseExampleDataSource,org.example.db.service.Sampl
+ eDao
+Import-Package: javax.sql,org.apache.commons.dbcp;version="[1.4,2)",org.
+ example.db.service;version="[1.0,2)",org.osgi.service.blueprint;version
+ ="[1.0.0,2.0.0)"
+Tool: Bnd-1.50.0

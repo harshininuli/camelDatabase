@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<blueprint xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:camel="http://camel.apache.org/schema/blueprint"
+	xmlns:cxfcore="http://cxf.apache.org/blueprint/core"
+	xmlns:cm="http://aries.apache.org/blueprint/xmlns/blueprint-cm/v1.1.0"
+	xsi:schemaLocation="http://www.osgi.org/xmlns/blueprint/v1.0.0
+						http://www.osgi.org/xmlns/blueprint/v1.0.0/blueprint.xsd
+						http://camel.apache.org/schema/blueprint
+						http://camel.apache.org/schema/blueprint/camel-blueprint.xsd">
+
+  
+   <reference id="sampleDaoRef" interface="org.example.db.service.SampleDao" />
+	
+<reference id="sampleDataSource" interface="javax.sql.DataSource" filter="(osgi.jndi.CamelDatabaseExample.datasource.name=camelDatabaseExampleDataSource)"/> 
+	
+	 <bean id="databaseOperations" class="org.example.db.bean.DatabaseOperations">
+		<property name="sampleDao" ref="sampleDaoRef" />
+	</bean> 
+	
+  <camelContext  id="camelDatabaseImplementation" xmlns="http://camel.apache.org/schema/blueprint">
+		<packageScan>
+		    <package>org.example.route</package>
+		</packageScan>
+	</camelContext>	
+
+</blueprint>

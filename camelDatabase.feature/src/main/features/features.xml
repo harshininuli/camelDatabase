@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<features xmlns="http://karaf.apache.org/xmlns/features/v1.0.0">
+	<feature name="camelDatabase.feature" version="1.0.0-SNAPSHOT">		
+		<feature>camel-sql</feature>
+	    <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.commons-dbcp/1.4_3</bundle>
+		<bundle>mvn:org.example/camelDatabaseExample/1.0.0-SNAPSHOT</bundle>
+		<bundle>mvn:org.example/camelDatabaseImpl/1.0.0-SNAPSHOT</bundle>
+	</feature>
+</features>
